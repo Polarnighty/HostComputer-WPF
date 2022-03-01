@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HostComputer.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        FontFamily="Microsoft YaHei" FontWeight="ExtraLight" Foreground="#333"
+        WindowStyle="None" AllowsTransparency="True"  WindowStartupLocation="CenterScreen" Background="#FFF6F7FC"
+        ResizeMode="CanResizeWithGrip"
+        Title="上位机应用基础框架" Height="450" Width="800">
+    
     <Window.Resources>
         <Style TargetType="RadioButton" x:Key="LeftMenuItemButtonStyle">
             <Setter Property="Foreground" Value="White"/>
@@ -89,7 +93,86 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
-        
+    <Grid Background="Transparent" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#FF3269DE">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Image Source="pack://application:,,,/HostComputer;component/Assets/Images/Logo.png" Width="35"/>
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                    <RadioButton Content="&#xe65c;" Height="80" IsChecked="True" Style="{StaticResource LeftMenuItemButtonStyle}"
+                                 ToolTip="Dashboard"
+                                 Command="{Binding MenuItemCommand}"
+                                 CommandParameter="HostComputer.Views.MonitorView"/>
+                    <RadioButton Content="&#xe661;" Height="80" Style="{StaticResource LeftMenuItemButtonStyle}"
+                                 ToolTip="设备"
+                                 Command="{Binding MenuItemCommand}"
+                                 CommandParameter="HostComputer.Views.DeviceView" Cursor="Hand"/>
+                    <RadioButton Content="&#xe62e;" Height="80" Style="{StaticResource LeftMenuItemButtonStyle}"
+                                 ToolTip="报警"
+                                 Command="{Binding MenuItemCommand}"
+                                 CommandParameter="HostComputer.Views.AlarmView" Cursor="Hand"/>
+                    <RadioButton Content="&#xe62a;" Height="80" Style="{StaticResource LeftMenuItemButtonStyle}"
+                                 ToolTip="报表"
+                                 Command="{Binding MenuItemCommand}"
+                                 CommandParameter="HostComputer.Views.ReportView" Cursor="Hand"/>
+                </StackPanel>
+                <TextBlock Grid.Row="2" Text="&#xe618;" FontFamily="{StaticResource iconfont}" Foreground="White"
+                           FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button Height="50" Content="&#xe618;" Style="{StaticResource SettingsButtonStyle}" Grid.Row="2"/>
+            </Grid>
+        </Border>
+
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#EEE" BorderThickness="0,0,0,1"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0">
+                <TextBlock Text="上位机应用基础框架" FontSize="15"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Content="&#xe7e6;" Style="{StaticResource ControlButtonStyle}" Background="#11000000" Tag="#333"/>
+                <Button Content="&#xe694;" Style="{StaticResource ControlButtonStyle}" Background="#11000000" Tag="#333"/>
+                <Button Content="&#xe653;" Style="{StaticResource ControlButtonStyle}" Background="#FFE63535" Tag="White"
+                        Command="{Binding CloseCommand}" CommandParameter="{Binding Path=.,RelativeSource={RelativeSource AncestorType=Window}}"/>
+            </StackPanel>
+            <TextBlock Text="{Binding MainModel.Time}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="15,10" 
+                       FontSize="16" FontFamily="pack://application:,,,/HostComputer;component/Assets/Fonts/#digital display"/>
+
+            <Border Background="#F7F9FA" Grid.Row="2" BorderBrush="#F0F4F1" BorderThickness="0,1,0,0"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0" Grid.Row="2">
+                <TextBlock Text="Administrator" VerticalAlignment="Center" Margin="10,0"/>
+                <Border Width="35" Height="35" CornerRadius="20" BorderThickness="2" BorderBrush="White">
+                    <Border.Background>
+                        <ImageBrush ImageSource="pack://application:,,,/HostComputer;component/Assets/Images/avatar.png"/>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="0" Direction="0" Opacity="0.3"/>
+                    </Border.Effect>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0">
+                <TextBlock Text="通信状态"/>
+                <TextBlock Text="已连接" Margin="20,0,10,0"/>
+                <Border Background="Green" Width="10" Height="10" CornerRadius="5"/>
+            </StackPanel>
+
+
+            <ContentControl Grid.Row="1" Content="{Binding MainModel.MainContent}"/>
+        </Grid>
     </Grid>
+    
 </Window>

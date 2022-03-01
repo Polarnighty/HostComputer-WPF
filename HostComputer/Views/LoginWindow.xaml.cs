@@ -16,19 +16,20 @@ using System.Windows.Shapes;
 namespace HostComputer.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
-
-            this.DataContext = new MainViewModel();
-
-            WindowManager.Register<DeviceEditWindow>("DeviceEditWindow", this);
+            DataContext = new LoginViewModel();
         }
 
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
 
     }
 }

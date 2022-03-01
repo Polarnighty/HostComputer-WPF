@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:HostComputer"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="iconfont">pack://application:,,,/HostComputer;component/Assets/Fonts/#iconfont</FontFamily>
     </Application.Resources>
 </Application>
