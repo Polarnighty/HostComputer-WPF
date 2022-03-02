@@ -93,7 +93,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Background="Transparent" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+    <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60"/>
             <ColumnDefinition/>

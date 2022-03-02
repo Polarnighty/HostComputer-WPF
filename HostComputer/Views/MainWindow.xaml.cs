@@ -26,7 +26,7 @@ namespace HostComputer.Views
 
             this.DataContext = new MainViewModel();
 
-            WindowManager.Register<DeviceEditWindow>("DeviceEditWindow", this);
+            //WindowManager.Register<DeviceEditWindow>("DeviceEditWindow", this);
         }
 
 

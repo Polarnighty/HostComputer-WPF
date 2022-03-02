@@ -9,16 +9,28 @@
   <ItemGroup>
     <None Remove="Assets\Fonts\digital_display.ttf" />
     <None Remove="Assets\Fonts\iconfont.ttf" />
+    <None Remove="Assets\Images\avatar.png" />
+    <None Remove="Assets\Images\login_image.jpg" />
+    <None Remove="Assets\Images\Logo.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.14" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\Fonts\digital_display.ttf" />
     <Resource Include="Assets\Fonts\iconfont.ttf" />
+    <Resource Include="Assets\Images\avatar.png" />
+    <Resource Include="Assets\Images\login_image.jpg" />
+    <Resource Include="Assets\Images\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataBase\" />
+    <Folder Include="Entity\" />
   </ItemGroup>
 
 </Project>

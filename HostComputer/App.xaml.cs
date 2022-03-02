@@ -24,10 +24,9 @@ namespace HostComputer
             {
                 new MainWindow().ShowDialog();
             }
-            Application.Current.Shutdown();
+            Current.Shutdown();
 
         }
-
-
+        
     }
 }

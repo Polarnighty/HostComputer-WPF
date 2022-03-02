@@ -60,7 +60,7 @@ namespace HostComputer.DataAccess
                     string userSql = "select * from users where user_name=@user_name and password=@password and is_validation=1";
                     adapter = new SqlDataAdapter(userSql, Conn);
                     adapter.SelectCommand.Parameters.Add(new SqlParameter("@user_name", SqlDbType.VarChar) { Value = userName });
-                    adapter.SelectCommand.Parameters.Add(new SqlParameter("@password", SqlDbType.VarChar) { Value = Md5Provider.GetMD5String(pwd + "@" + userName.ToLower()) });
+                    //adapter.SelectCommand.Parameters.Add(new SqlParameter("@password", SqlDbType.VarChar) { Value = Md5Provider.GetMD5String(pwd + "@" + userName.ToLower()) });
                     DataTable dataTable = new DataTable();
                     int count = adapter.Fill(dataTable);
                     //Comm = new SqlCommand(userSql, Conn);
