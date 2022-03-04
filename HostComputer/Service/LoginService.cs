@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HostComputer.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,19 @@ using System.Threading.Tasks;
 
 namespace HostComputer.Service
 {
-    public class LoginService
+    public class LoginService : BaseService
     {
-        //SqlServerAccess sqlServerAccess = new SqlServerAccess();
-        //public bool CheckLogin(string username, string password)
-        //{
-        //    //return sqlServerAccess.CheckUserInfo(username, password);
-        //}
+        public LoginService(SqlContext context) :base(context)
+        {
+
+        }
+        public bool CheckLogin(string username, string password)
+        {
+
+            return false;
+            //return sqlServerAccess.CheckUserInfo(username, password);
+        }
+
 
     }
 }
