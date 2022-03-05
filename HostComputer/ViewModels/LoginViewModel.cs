@@ -57,7 +57,7 @@ namespace HostComputer.ViewModels
                         try
                         {
                             //if (loginService.CheckLogin(UserModel.UserName, UserModel.Password))
-                            //    (obj as System.Windows.Window).DialogResult = true;
+                            (obj as System.Windows.Window).DialogResult = true;
                         }
                         catch (Exception ex)
                         {
