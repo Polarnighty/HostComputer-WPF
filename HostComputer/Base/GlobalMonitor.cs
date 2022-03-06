@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HostComputer.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace HostComputer.Base
 {
     public class GlobalMonitor
     {
-        //public static ObservableCollection<DeviceModel> DeviceList { get; set; } = new ObservableCollection<DeviceModel>();
+        public static ObservableCollection<DeviceModel> DeviceList { get; set; } = new ObservableCollection<DeviceModel>();
 
         static bool isRunning = true;
         static Task mainTask = null;
