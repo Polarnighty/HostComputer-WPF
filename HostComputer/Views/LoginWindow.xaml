@@ -157,7 +157,7 @@
                         <RowDefinition Height="auto" MinHeight="40"/>
                     </Grid.RowDefinitions>
                     <StackPanel VerticalAlignment="Center" Margin="0,0,0,30">
-                        <TextBlock Text="朝夕智控" Foreground="#333" FontSize="22"/>
+                        <TextBlock Text="智控" Foreground="#333" FontSize="22"/>
                         <TextBlock Text="专注于提升工业智能管理协作平台" FontSize="12" Foreground="#888" Margin="0,10,0,0"/>
                     </StackPanel>
 
