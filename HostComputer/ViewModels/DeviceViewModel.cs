@@ -34,7 +34,7 @@ namespace HostComputer.ViewModels
         {
             Task.Run(async () =>
             {
-                Communication.Siemens.S7Net s7Net = new Communication.Siemens.S7Net("192.168.2.1", 102, 0, 0);
+                Zhaoxi.Communication.Siemens.S7Net s7Net = new Zhaoxi.Communication.Siemens.S7Net("192.168.2.1", 102, 0, 0);
                 while (true)
                 {
                     await Task.Delay(500);

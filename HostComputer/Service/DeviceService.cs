@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace HostComputer.Service
 {
-    public class BaseService
+    public class DeviceService: BaseService
     {
-        protected SqlContext context;
-        public BaseService(SqlContext context)
+        public DeviceService(SqlContext context) : base(context)
         {
-            this.context = context;
-        }
 
+        }
     }
 }
