@@ -1,4 +1,6 @@
-﻿using HostComputer.Models;
+﻿using HostComputer.DataBase;
+using HostComputer.Models;
+using HostComputer.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,7 +27,7 @@ namespace HostComputer.Base
                 DeviceList.Add(new DeviceModel { Name = "#3 Master device info" });
                 DeviceList.Add(new DeviceModel { Name = "#4 Master device info" });
 
-                DeviceService deviceService = new DeviceService();
+                DeviceService deviceService = new DeviceService(new SqlContext());
                 var list = deviceService.GetDevices();
                 if (list != null)
                     foreach (var item in list)

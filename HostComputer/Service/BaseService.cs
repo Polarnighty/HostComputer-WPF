@@ -1,4 +1,5 @@
 ﻿using HostComputer.DataBase;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,8 @@ namespace HostComputer.Service
 {
     public class BaseService
     {
-        protected SqlContext context;
-        public BaseService(SqlContext context)
-        {
-            this.context = context;
-        }
+        protected SqlContext context = new SqlContext();
+
 
     }
 }
