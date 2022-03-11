@@ -1,4 +1,5 @@
 ﻿using HostComputer.DataBase;
+using HostComputer.Entity;
 using HostComputer.Models;
 using System;
 using System.Collections.Generic;
@@ -29,22 +30,34 @@ namespace HostComputer.Service
                     deviceModel.Name = item.Name;
                     deviceModel.SN = item.SN;
                     deviceModel.CommType = item.CommType;
-                }
-                // 获取协议信息
-                if (deviceModel.CommType==1)
-                {
 
+                    // 获取协议信息
+                    if (deviceModel.CommType == 1)
+                    {
+                        var Modbus = context.protocolModbus.SingleOrDefault();
+                        if (Modbus!=null)
+                        {
+                            deviceModel.Modbus.IP = Modbus.IP;
+                            deviceModel.Modbus.Port = Modbus.Port;
+                            deviceModel.Modbus.BaudRate = Modbus.BaudRate;
+                        }
+
+                    }
+                    else if (deviceModel.CommType == 1)
+                    {
+                        var S7 = context.protocolS7.SingleOrDefault();
+                        if (S7 != null)
+                        {
+                            deviceModel.S7.IP = S7.IP;
+                            deviceModel.S7.Port = S7.Port;
+                            deviceModel.S7.Rock = S7.Rock;
+                            deviceModel.S7.Slot = S7.Slot;
+                        }
+                    }
                 }
             }
             return null;
         }
 
-        public void GetProtocolSettings(int d_id, int type = 1)
-        {
-            if (type == 2)
-            {
-                return;
-            }
-        }
     }
 }
