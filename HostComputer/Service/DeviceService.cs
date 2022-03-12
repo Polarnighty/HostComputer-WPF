@@ -54,9 +54,27 @@ namespace HostComputer.Service
                             deviceModel.S7.Slot = S7.Slot;
                         }
                     }
+
+                    // 获取点位信息
+                    var v_info = context.monitorValues.Where(m => m.DeviceId == item.id).ToList();
+                    if (v_info != null && v_info.Count() > 0)
+                    {
+                        List<MonitorValueModel> vList = (from q in v_info
+                                                         select new MonitorValueModel
+                                                         {
+                                                             ValueName = q.ValueName,
+                                                             Address = q.Address,
+                                                             DataType = q.DataType,
+                                                             Unit = q.Unit
+                                                         }).ToList();
+                        deviceModel.MonitorValueList = new System.Collections.ObjectModel.ObservableCollection<MonitorValueModel>(vList);
+                    }
+
+                    deviceModels.Add(deviceModel);
+
                 }
             }
-            return null;
+            return deviceModels;
         }
 
     }
