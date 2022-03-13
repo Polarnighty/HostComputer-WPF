@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace HostComputer.Views
 {
     /// <summary>
-    /// Interaction logic for DeviceView.xaml
+    /// Interaction logic for ReportView.xaml
     /// </summary>
-    public partial class DeviceView : Window
+    public partial class ReportView : UserControl
     {
-        public DeviceView()
+        public ReportView()
         {
             InitializeComponent();
         }
-        
     }
 }
