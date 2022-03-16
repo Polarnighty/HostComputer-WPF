@@ -27,7 +27,7 @@ namespace HostComputer.Base
                 DeviceList.Add(new DeviceModel { Name = "#3 Master device info" });
                 DeviceList.Add(new DeviceModel { Name = "#4 Master device info" });
 
-                DeviceService deviceService = new DeviceService(new SqlContext());
+                DeviceService deviceService = new DeviceService();
                 var list = deviceService.GetDevices();
                 if (list != null)
                     foreach (var item in list)

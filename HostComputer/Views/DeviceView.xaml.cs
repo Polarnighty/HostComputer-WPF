@@ -17,12 +17,14 @@ namespace HostComputer.Views
     /// <summary>
     /// Interaction logic for DeviceView.xaml
     /// </summary>
-    public partial class DeviceView : Window
+    public partial class DeviceView : UserControl
     {
         public DeviceView()
         {
             InitializeComponent();
+
+            //this.DataContext = new DeviceViewModel();
         }
-        
+
     }
 }
